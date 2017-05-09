@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projet JS 3</title>
+</head>
+
+<body>
+    <p>texte</p>
+
+    <script type="text/javascript">
+        let el = document.querySelector("p");
+
+        function test() {
+            console.log("bloup");
+        }
+        el.addEventListener("click", test());
+        el.addEventListener("click", function() {
+            console.log("bloup");
+        });
+
+        el.addEventListener("click", function() {
+            console.log("bloup");
+        });
+    </script>
+</body>
+
+</html>
