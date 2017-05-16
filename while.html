@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        let reponse = prompt("2+2 = ?");
+        while (reponse !== '4') {
+            let p = document.createElement("p");
+            p.textContent = "Non ce n'est pas" + reponse;
+            document.body.appendChild(p);
+            reponse = prompt("2+2 = ?");
+        }
+        let p = document.createElement("p");
+        p.textContent = "Bravo c'est bien 4";
+        document.body.appendChild(p);
+    </script>
+    <input type="text" name="button" value="">
+    
+</body>
+
+</html>

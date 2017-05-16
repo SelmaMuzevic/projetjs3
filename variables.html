@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Variables scope</title>
+</head>
+
+<body>
+    <script>
+        let i = 0
+        for (let i = 0; i < 10; i = i + 1) {
+            (function() {
+                console.log(i);
+            })();
+        }
+    </script>
+</body>
+
+</html>

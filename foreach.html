@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
+    <label for="clef">Clef: </label>
+    <input type="text" id="clef">
+    <label for="valeur">Valeur</label>
+    <input type="text" id="valeur">
+    <button id="btn">Ajouter</button>
+
+    <script>
+        let objet = {};
+        document.querySelector("#btn")
+            .addEventListener("click", function(e) {
+                let inputClef = document.querySelector("#clef");
+                let inputValeur = document.querySelector("#valeur");
+                /* on utilise la methode hasOwnProperty('clef') (disponible sur toutes
+                les variables) pour determiner si l'objet possede deja une propriete ayant 
+                la meme clef que celle contenue dans l'inputClef */
+
+                if (objet.hasOwnProperty(inputClef.value)) {
+                    // si oui on rajoute une nouvelle valeur a la suite 
+                    objet[inputClef.value] += ',' + inputValeur.value;
+                } else {
+                    // si non, on cree la propriete 
+                    objet[inputClef.value] = inputValeur.value;
+                }
+
+                console.log(objet);
+
+            });
+    </script>
+    <script>
+        let Objet = {
+            clef1: "valeur1",
+            clef2: "valeur2"
+        }
+        for (let clef in Objet) {
+
+            console.log(clef + " : " + Objet[clef]);
+        }
+    </script>
+</body>
+
+</html>

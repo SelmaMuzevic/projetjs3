@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet Fichier/Identite</title>
+</head>
+
+<body>
+    <script>
+        /* Les objets en Javascript (et ailleurs) vont permettre d'organiser le code en regroupant des valeurs liees 
+                 entre elles dans un objet logique. Ici, notre objet represente une personne avec tout ces coordones.
+                Pour declarer un objet, on utilise les accolades et a l'interieur des assosiations clefs:valeur des differentes proprietes
+                de cet objet(les proprietes sont les variables liees a un objet)separees par un virgule.
+                */
+        let personne = {
+            nom: "mon nom",
+            prenom: "mon prenom",
+            age: 30,
+            adresse: {
+                numero: 3,
+                rue: "adresse complete",
+                codePostale: 69100,
+                ville: "Villeurbanne",
+                region: "Rhone-Alpes",
+                pays: "France",
+            },
+            celibataire: true,
+            chats: [
+                "Bobo",
+                "Mitz",
+                "Lala",
+                "Coco",
+            ],
+            salutation: function() {
+                alert("Hello");
+            }
+        };
+        personne.salutation();
+        personne.adresse.numero = 3;
+        console.log(personne.adresse.numero);
+        console.log(personne["adresse"]["numero"]);
+        console.log(personne.chats[0]);
+
+        /* On peut acceder au proprietes d'un objet en utilisant le nom de l'objet puis un point (.)
+        et le nom de la propriete dont on veut recuperer la valeur */
+
+        console.log(personne.region);
+
+        /* On peut egalement utiliser la notation propre aux arrays, mais en mettant le nom de la propriete en chaîne 
+        de caracteres au lieu d'un index numerique */
+
+        console.log(personne["region"]);
+
+        /* On peut modifier les valeurs d'une propriete en accedant a celle ci et en indiquant la nouvelle valeur avec un (=) */
+
+        personne.region = "autre";
+
+        /* La structure d'un objet en js n'est pas fixe, on peut rajouter une nouvelle propriete
+    </script>
+</body>
+
+</html>
