@@ -29,7 +29,16 @@
 
                 if (objet.hasOwnProperty(inputClef.value)) {
                     // si oui on rajoute une nouvelle valeur a la suite 
-                    objet[inputClef.value] += ',' + inputValeur.value;
+                    // objet[inputClef.value] += ',' + inputValeur.value;
+                    let clef = inputClef.value;
+                    // pour faire sous forme de tableau 
+                    // on verifie si la valeur liee a la propriete est un tableau
+                    if (Array.isArray(objet[clef])) {
+                        objet[clef].push(inputValeur.value);
+                    } else {
+                        objet[clef] = [objet[clef], inputValeur.value];
+                    }
+
                 } else {
                     // si non, on cree la propriete 
                     objet[inputClef.value] = inputValeur.value;
@@ -43,11 +52,49 @@
         let Objet = {
             clef1: "valeur1",
             clef2: "valeur2"
-        }
+        };
+        /* La boucle for...in parcourera toutes les clefs des proprietes d'un objet.
+        On declare une variable en premier qui contiendra les clefs, son nom importe peu.
+        */
         for (let clef in Objet) {
-
+            /*
+            On utilise la notation avec crochet pour pouvoir acceder a la valeur d' une propriete
+            en lui fournissant une variable comme clef
+            */
             console.log(clef + " : " + Objet[clef]);
         }
+        /* 
+        Le for...in fonctionne techniquement sur les tableau js, par contre, il aura
+        des comportement indesirables sur les pseudo-tableau(genre ceux renvoyes par 
+        le DOM)
+        */
+
+        let tableau = ["ga", "zo", "bu"];
+        for (let index in tableau) {
+            console.log(index);
+        }
+
+        /* 
+        Le for...of existe depuis la specification ECMAscript2015
+        et permets d'iterer sur des valeurs d'un tableau (ne marche pas sur les objets directement)
+        */
+        for (let index of tableau) {
+            sonsole.log(valeur);
+        }
+        /* 
+        Les tableaux JS natifs  possedent une methode forEach qui attend une fonction en argument 
+        qui sera declenchee a chaque entree  contenue dans le tableau.
+        Cette fonction possede elle meme deux arguments, la valeur actuelle et la clef actuelle */
+
+
+        tableau.forEach(function(valeur, clef) {
+            console.log(clef + ":" + valeur);
+
+            /* Le do..while executera le contenu de DO tant que la condition du WHILE est vraie.
+            Il executera donc toujours au moins une fois le contenu de DO (la verification se passant apres, 
+            contrairement au while classique)
+            */
+        });
     </script>
 </body>
 
