@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objet Tableau</title>
+</head>
+
+<body>
+    <script>
+        /* on a cree une variable tables contenant le tableau (array) 
+         */
+        let table1 = {
+            numero: 1,
+            nombre: 6,
+            personnes: ["Yamina", "Sylvain", "Audrey", "Kevin", "Selma", "Evan"]
+        };
+        let table2 = {
+            numero: 2,
+            nombre: 6,
+            personnes: ["Kadyi", "Manon", "Clemence", "Jullien", "Thomas", "Remy"]
+        };
+        let table3 = {
+            numero: 3,
+            nombre: 6,
+            personnes: ["Maëlle", "Jaffar", "Cyrille", "Valentin", "Yannis", "Justin"]
+        };
+        let table4 = {
+            numero: 4,
+            nombre: 6,
+            personnes: ["Marlene", "Sebastien", "Virginie", "Apdil", "Remy", "Manu"]
+        };
+        /* on fait une premiere boucle pour iterer sur les objets tables contenus dans l'array table*/
+        let tables = [table1, table2, table3, table4];
+
+        for (i = 0; i < tables.length; i++) {
+            console.log(tables[i]);
+
+            for (let table of tables) {
+                console.log("la table n" + table.numero + )
+            };
+        };
+    </script>
+</body>
+
+</html>
